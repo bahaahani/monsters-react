@@ -1,7 +1,15 @@
+import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      string: 'meow World'
+    }
+  }
+  render() {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +25,11 @@ function App() {
         >
           Learn React
         </a>
+        <p>{this.state.string}</p>
+        <button onClick={() => {this.setState({string:"audrey"})}}>Change Text</button>
       </header>
     </div>
   );
 }
-
+}
 export default App;
